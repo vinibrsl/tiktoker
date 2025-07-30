@@ -1,0 +1,24 @@
+[project]
+name = "tiktoker"
+version = "0.1.0"
+description = "tiktoker using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.150.0,<1.0.0",
+    "litellm>=1.74.0",
+    "ffmpeg-python>=0.2.0",
+    "pydantic>=2.0.0"
+]
+
+[project.scripts]
+kickoff = "tiktoker.main:kickoff"
+run_crew = "tiktoker.main:kickoff"
+plot = "tiktoker.main:plot"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "flow"
